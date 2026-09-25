@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { Star, Phone, ArrowUpRight } from 'lucide-react';
 import { gsap } from 'gsap';
+import hero_video_1790341591947 from '../assets/hero-video.mp4';
+import jfm_hero_lifestyle_1790341591947 from '../assets/images/jfm_hero_lifestyle_1790341591947.jpg';
 
 interface HeroSectionProps {
   onExploreClick: () => void;
@@ -56,9 +58,9 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
           playsInline
           controls={false}
           className="w-full h-full object-cover object-center scale-100 opacity-90 transition-opacity duration-700"
-          poster="/src/assets/images/jfm_hero_lifestyle_1790341591947.jpg"
+          poster={jfm_hero_lifestyle_1790341591947}
         >
-          <source src="/src/assets/hero-video.mp4" type="video/mp4" />
+          <source src={hero_video_1790341591947} type="video/mp4" />
         </video>
 
         {/* Soft Contrast Veil for clear text legibility */}
