@@ -1,0 +1,6 @@
+{
+  "name": "JFM E-Bikes & Mobility Retail",
+  "description": "Official retail showcase and branch directory for JFM E-Bikes and JFM Group of Businesses across Ilocos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
