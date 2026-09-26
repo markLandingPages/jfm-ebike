@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Play, Youtube, ExternalLink, Sparkles } from 'lucide-react';
-import hero_ebike_commuter_bike_1790339345034 from '../assets/images/hero_ebike_commuter_bike_1790339345034.jpg';
-import jfm_hero_lifestyle_ebike_1790339387002 from '../assets/images/jfm_hero_lifestyle_ebike_1790339387002.jpg';
-import jfm_showroom_hero_1790339399358 from '../assets/images/jfm_showroom_hero_1790339399358.jpg';
+import hero_ebike_commuter_bike_1790339345034 from '../assets/images/hero_ebike_fleet_1790339326610.jpg';
+import jfm_hero_lifestyle_ebike_1790339387002 from '../assets/images/jfm_hero_lifestyle_1790341591947.jpg';
+import jfm_showroom_hero_1790339399358 from '../assets/images/jfm_showroom_hub_1790339391145.jpg';
 interface ProductInActionProps {
   onExploreClick: () => void;
 }
