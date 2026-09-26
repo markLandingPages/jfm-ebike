@@ -74,7 +74,7 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
         {/* Top Badges Group */}
         <div ref={badgesRef} className="flex flex-col items-center space-y-2 sm:space-y-2.5">
           {/* Top Review Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-zinc-200/90 text-xs text-zinc-800 shadow-md">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-zinc-200/90 text-xs text-[#800020] shadow-sm">
             <div className="flex items-center gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
@@ -89,10 +89,10 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
             <span className="px-3.5 py-0.5 rounded-full bg-[#fbf0f2]/95 backdrop-blur-md border border-[#800020]/25 text-[11px] sm:text-xs font-semibold text-[#800020] shadow-sm">
               Tier-1 Battery Platforms
             </span>
-            <span className="px-3.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-zinc-200/90 text-[11px] sm:text-xs font-semibold text-zinc-800 shadow-sm">
+            <span className="px-3.5 py-0.5 rounded-full bg-[#fbf0f2]/95 backdrop-blur-md border border-[#800020]/25 text-[11px] sm:text-xs font-semibold text-[#800020] shadow-sm">
               0% Gasoline Costs
             </span>
-            <span className="px-3.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-zinc-200/90 text-[11px] sm:text-xs font-semibold text-zinc-800 shadow-sm">
+            <span className="px-3.5 py-0.5 rounded-full bg-[#fbf0f2]/95 backdrop-blur-md border border-[#800020]/25 text-[11px] sm:text-xs font-semibold text-[#800020] shadow-sm">
               10 Display Centers
             </span>
           </div>

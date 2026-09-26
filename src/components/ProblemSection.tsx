@@ -1,126 +1,154 @@
-import { Fuel, Wrench, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { XCircle, CheckCircle2, ArrowRight, Zap, TrendingDown } from 'lucide-react';
 
 export default function ProblemSection() {
-  const painPoints = [
+  const problems = [
     {
-      icon: Fuel,
-      badge: 'Rising Fuel Expenses',
-      title: '₱150–₱300 Daily on Gasoline',
-      description: 'Daily market trips, school drops, and errands quickly drain household budgets with unpredictable provincial gasoline prices.'
+      title: '₱150–₱300 Daily Fuel Drain',
+      desc: 'Trips to the market, school drops, and errands easily add up to over ₱6,000 every month in gasoline alone.'
     },
     {
-      icon: AlertTriangle,
-      badge: 'Fly-by-Night Sellers',
-      title: 'Online Sellers With No Spare Parts',
-      description: 'Buying unbranded e-bikes online often leaves owners stranded when batteries fail or replacement controllers cannot be found.'
+      title: 'Disposable Online Units',
+      desc: 'Unbranded e-bikes bought online leave owners stranded when generic batteries fail or controllers burn out.'
     },
     {
-      icon: Wrench,
-      badge: 'No Local Service Hubs',
-      title: 'Zero After-Sales Support',
-      description: 'Most dealerships sell and disappear. When maintenance or tire replacements are needed, owners have no physical shop to visit.'
+      title: 'Zero Local Service or Parts',
+      desc: 'Fly-by-night sellers offer no physical shop in Ilocos to service brakes, replace tires, or honor warranty claims.'
     }
   ];
 
   const solutions = [
     {
-      stat: '₱8.50',
-      label: 'Per Full Charge',
-      desc: 'Travel 40–60 km for less than the price of one bottle of mineral water.'
+      highlight: '₱8.50 Full Charge',
+      title: '90% Monthly Savings',
+      desc: 'Travel 40–60 km for less than a bottle of water. Charge overnight via any ordinary 220V household outlet.'
     },
     {
-      stat: '10 Hubs',
-      label: 'Physical Service Centers',
-      desc: 'Real brick-and-mortar display centers across Ilocos Sur and Ilocos Norte.'
+      highlight: '10 Ilocos Showrooms',
+      title: 'Walk-In Physical Hubs',
+      desc: 'Real brick-and-mortar display centers in San Juan, Vigan, Badoc, Bantay, and 6 more towns for immediate support.'
     },
     {
-      stat: '100%',
-      label: 'Parts & Battery Stocked',
-      desc: 'Direct manufacturer access for chargers, tires, motors, and controllers.'
+      highlight: '100% In-Stock Parts',
+      title: 'Factory-Backed Warranty',
+      desc: 'Comprehensive 1-year motor coverage with ready replacement batteries, tires, and dedicated in-house mechanics.'
     }
   ];
 
   return (
     <section id="problem" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
-      {/* Section Header */}
-      <div data-gsap="fade-up" className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      {/* Editorial Header */}
+      <div data-gsap="fade-up" className="max-w-3xl mx-auto text-center space-y-4 mb-14 sm:mb-18">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fbf0f2] border border-[#800020]/20 text-xs font-semibold text-[#800020]">
-          <AlertTriangle className="w-3.5 h-3.5 text-[#800020]" />
-          <span>The Everyday Transportation Dilemma</span>
+          <TrendingDown className="w-3.5 h-3.5" />
+          <span>The Transportation Dilemma</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-950 tracking-tight">
-          Tired of High Gas Costs and <br className="hidden sm:inline" />
+
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-950 tracking-tight leading-[1.1]">
+          Still Burning ₱200 a Day on Gas? <br />
           <span className="text-[#800020]">
-            Unreliable E-Bike Sellers?
+            There is a Smarter Way in Ilocos.
           </span>
         </h2>
-        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-          Commuting in Ilocos shouldn't cost a fortune or leave you stranded with an unserviceable vehicle. Here is why hundreds of local families are switching to JFM.
+
+        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          Everyday travel shouldn't drain your household budget or leave you stranded with an unserviceable vehicle. Here is how switching to JFM solves both.
         </p>
       </div>
 
-      {/* Pain Points Grid (3 cards) */}
-      <div data-gsap="stagger" className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        {painPoints.map((item, idx) => (
-          <div
-            key={idx}
-            className="rounded-3xl bg-white border border-[#800020]/15 shadow-[0_8px_25px_rgba(0,0,0,0.04)] p-7 space-y-4 relative overflow-hidden group hover:border-[#800020]/40 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-[#fbf0f2] border border-[#800020]/20 flex items-center justify-center text-[#800020] group-hover:scale-110 transition-transform">
-              <item.icon className="w-6 h-6" />
-            </div>
-            <div className="space-y-2">
-              <span className="text-xs font-mono font-bold text-[#800020] uppercase tracking-wider">
-                {item.badge}
-              </span>
-              <h3 className="text-xl font-bold text-zinc-950 group-hover:text-[#800020] transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-sm text-zinc-600 leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* The JFM Resolution Banner */}
-      <div data-gsap="scale-in" className="rounded-3xl bg-gradient-to-br from-[#800020] via-[#6d001b] to-[#4d0013] text-white p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-        <div className="absolute -right-10 -bottom-10 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div className="lg:col-span-5 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold text-white tracking-wide">
-              <ShieldCheck className="w-4 h-4" />
-              <span>The JFM Alternative</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              A Direct Dealership You Can Actually Visit Anytime.
-            </h3>
-            <p className="text-rose-100 text-xs sm:text-sm leading-relaxed">
-              JFM E-Bikes gives you full peace of mind with 10 physical display centers across Ilocos Sur & Norte, ready stock, and authorized mechanics on standby.
-            </p>
-          </div>
-
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {solutions.map((sol, i) => (
-              <div
-                key={i}
-                className="p-5 rounded-2xl bg-black/20 border border-white/20 backdrop-blur-md space-y-2 text-white hover:bg-black/30 transition-colors"
-              >
-                <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight block">
-                  {sol.stat}
+      {/* Side-by-Side Impact Comparison Grid */}
+      <div data-gsap="scale-in" className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+        
+        {/* Left: The Everyday Frustrations (Zinc / Muted Card) */}
+        <div className="lg:col-span-5 rounded-3xl bg-zinc-50 border border-zinc-200/90 p-7 sm:p-9 flex flex-col justify-between space-y-8">
+          <div className="space-y-6">
+            <div className="flex items-center justify-between border-b border-zinc-200/80 pb-4">
+              <div className="space-y-0.5">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-400">
+                  The Old Way
                 </span>
-                <h4 className="text-xs font-bold text-rose-200 uppercase tracking-wider">
-                  {sol.label}
-                </h4>
-                <p className="text-xs text-rose-100 leading-relaxed">
-                  {sol.desc}
-                </p>
+                <h3 className="text-xl font-bold text-zinc-900">
+                  Gas & Generic Sellers
+                </h3>
               </div>
-            ))}
+              <span className="px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">
+                High Risk & Expense
+              </span>
+            </div>
+
+            <div className="space-y-5">
+              {problems.map((p, idx) => (
+                <div key={idx} className="flex items-start gap-3.5">
+                  <div className="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0 mt-0.5">
+                    <XCircle className="w-4 h-4" />
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-bold text-zinc-900">{p.title}</h4>
+                    <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed">{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="pt-4 border-t border-zinc-200 text-xs text-zinc-400 font-medium flex items-center justify-between">
+            <span>Result: Unpredictable monthly costs</span>
+            <span className="text-red-600 font-semibold">₱60,000+/yr burned</span>
           </div>
         </div>
+
+        {/* Center Indicator (Hidden on small screens) */}
+        <div className="hidden lg:flex lg:col-span-2 flex-col items-center justify-center space-y-3">
+          <div className="h-full w-px bg-gradient-to-b from-transparent via-[#800020]/30 to-transparent" />
+          <div className="w-11 h-11 rounded-full bg-[#800020] text-white flex items-center justify-center shadow-lg shadow-[#800020]/30 font-bold shrink-0">
+            <ArrowRight className="w-5 h-5" />
+          </div>
+          <div className="h-full w-px bg-gradient-to-b from-[#800020]/30 via-[#800020]/30 to-transparent" />
+        </div>
+
+        {/* Right: The JFM Resolution (Deep Crimson Hero Card) */}
+        <div className="lg:col-span-5 rounded-3xl bg-gradient-to-br from-[#800020] via-[#6d001b] to-[#480012] text-white p-7 sm:p-9 flex flex-col justify-between space-y-8 shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 space-y-6">
+            <div className="flex items-center justify-between border-b border-white/20 pb-4">
+              <div className="space-y-0.5">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-rose-200">
+                  The JFM Standard
+                </span>
+                <h3 className="text-xl font-bold text-white">
+                  Built for Ilocos Daily Life
+                </h3>
+              </div>
+              <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-bold flex items-center gap-1">
+                <Zap className="w-3.5 h-3.5 text-amber-300 fill-current" />
+                <span>Zero Gas</span>
+              </span>
+            </div>
+
+            <div className="space-y-5">
+              {solutions.map((s, idx) => (
+                <div key={idx} className="flex items-start gap-3.5">
+                  <div className="w-6 h-6 rounded-full bg-white/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-mono font-bold text-rose-200 uppercase">{s.highlight}</span>
+                    </div>
+                    <h4 className="text-sm font-bold text-white">{s.title}</h4>
+                    <p className="text-xs sm:text-sm text-rose-100/90 leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative z-10 pt-4 border-t border-white/20 text-xs text-rose-200 font-semibold flex items-center justify-between">
+            <span>Official 1-Year Motor Warranty</span>
+            <span className="text-white font-bold font-mono">10 Local Hubs</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );
