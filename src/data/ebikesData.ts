@@ -1,3 +1,7 @@
+import atv_quad_vehicle_1790339374646 from '../assets/images/atv_quad_vehicle_1790339374646.jpg';
+import ebike_cargo_trike_1790339362290 from '../assets/images/ebike_cargo_trike_1790339362290.jpg';
+import ebike_commuter_bike_1790339345034 from '../assets/images/ebike_commuter_bike_1790339345034.jpg';
+
 export interface EbikeUnit {
   id: string;
   code: string;
@@ -144,7 +148,7 @@ export const INVENTORY_DATA: EbikeUnit[] = [
     topSpeed: "35 km/h",
     maxLoad: "130 kg",
     chargeTime: "4 - 5 hours",
-    image: "/src/assets/images/ebike_commuter_bike_1790339345034.jpg",
+    image: ebike_commuter_bike_1790339345034,
     description: "Engineered for students, office workers, and market runs. Features a lightweight step-through frame, bright projector LED headlight, front wire basket, and tubeless puncture-resistant tires.",
     features: [
       "Front basket & rear cushioned seat",
@@ -168,7 +172,7 @@ export const INVENTORY_DATA: EbikeUnit[] = [
     topSpeed: "32 km/h",
     maxLoad: "320 kg (2-3 Passengers + Cargo)",
     chargeTime: "6 - 7 hours",
-    image: "/src/assets/images/ebike_cargo_trike_1790339362290.jpg",
+    image: ebike_cargo_trike_1790339362290,
     description: "The ultimate family runabout and business workhorse. Fully sheltered with an all-weather roof canopy, reverse gear button, and wide reinforced chassis built for provincial roads.",
     features: [
       "Weather-shield canopy roof & windshield",
@@ -192,7 +196,7 @@ export const INVENTORY_DATA: EbikeUnit[] = [
     topSpeed: "55 km/h",
     maxLoad: "180 kg",
     chargeTime: "Electric Start with pull backup",
-    image: "/src/assets/images/atv_quad_vehicle_1790339374646.jpg",
+    image: atv_quad_vehicle_1790339374646,
     description: "Tested on rugged Ilocos terrain. Built with aggressive deep-tread off-road tires, reinforced steel front bumper, heavy steel luggage racks, and dual disc brakes for absolute safety.",
     features: [
       "Rugged all-terrain deep-lug knobby tires",
@@ -216,7 +220,7 @@ export const INVENTORY_DATA: EbikeUnit[] = [
     topSpeed: "38 km/h",
     maxLoad: "150 kg",
     chargeTime: "4 - 6 hours",
-    image: "/src/assets/images/ebike_commuter_bike_1790339345034.jpg",
+    image: ebike_commuter_bike_1790339345034,
     description: "Ideal for daily commutes between municipalities. Features dual rear shock absorbers for bumpy road comfort, wide floorboard, and built-in USB mobile phone charging port.",
     features: [
       "Integrated USB phone charger on handlebar",
@@ -239,7 +243,7 @@ export const INVENTORY_DATA: EbikeUnit[] = [
     topSpeed: "30 km/h (Gov. restricted for safety)",
     maxLoad: "450 kg Flatbed Capacity",
     chargeTime: "7 - 8 hours",
-    image: "/src/assets/images/ebike_cargo_trike_1790339362290.jpg",
+    image: ebike_cargo_trike_1790339362290,
     description: "Ditch expensive gasoline for your local deliveries. Features drop-down steel cargo sides, reinforced chassis, extra-wide tires, and high/low gear climbing torque selector.",
     features: [
       "3-side drop gate modular steel bed",
@@ -262,7 +266,7 @@ export const INVENTORY_DATA: EbikeUnit[] = [
     topSpeed: "45 km/h (Adjustable speed governor)",
     maxLoad: "110 kg",
     chargeTime: "Key electric start",
-    image: "/src/assets/images/atv_quad_vehicle_1790339374646.jpg",
+    image: atv_quad_vehicle_1790339374646,
     description: "Compact chassis with easy automatic throttle control and speed limiter screw for beginner safety. Perfect for recreational parks, beach runs, and resort hospitality.",
     features: [
       "Adjustable speed throttle limiter",
