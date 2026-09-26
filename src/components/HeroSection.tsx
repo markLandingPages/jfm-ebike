@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Star, Phone, ArrowUpRight } from 'lucide-react';
 import { gsap } from 'gsap';
-import jfm_hero_lifestyle_ebike_1790339387002 from '../assets/images/jfm_hero_lifestyle_ebike_1790339387002.jpg';
+import jfm_hero_lifestyle_ebike_1790339387002 from '../assets/images/jfm_hero_lifestyle_1790341591947.jpg';
 import hero_video from '../assets/hero-video.mp4';
 interface HeroSectionProps {
   onExploreClick: () => void;
