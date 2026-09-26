@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Play, Youtube, ExternalLink, Sparkles } from 'lucide-react';
-import ebike_commuter_bike_1790339345034 from '../assets/images/ebike_commuter_bike_1790339345034.jpg';
-import ebike_cargo_trike_1790339362290 from '../assets/images/ebike_cargo_trike_1790339362290.jpg';
-import atv_quad_vehicle_1790339374646 from '../assets/images/atv_quad_vehicle_1790339374646.jpg';
+
 interface ProductInActionProps {
   onExploreClick: () => void;
 }
@@ -16,21 +14,21 @@ export default function ProductInActionSection({ onExploreClick }: ProductInActi
       description: 'Effortless step-through geometry, generous front storage basket, and 45–60 km range on a single charge.',
       tag: 'City Commuter Series',
       stat: '500W–600W Hub Motor',
-      image: ebike_commuter_bike_1790339345034
+      image: '/src/assets/images/ebike_commuter_bike_1790339345034.jpg'
     },
     {
       title: 'All-Weather Family Transit',
       description: 'Full canopy overhead weather roof, comfortable bench seating for 3 passengers, and digital reverse gear.',
       tag: 'Heavy-Duty E-Trike',
       stat: '320kg Max Load',
-      image: ebike_cargo_trike_1790339362290
+      image: '/src/assets/images/ebike_cargo_trike_1790339362290.jpg'
     },
     {
       title: 'Off-Road & Farm Cargo Power',
       description: 'Reinforced utility cargo racks, 4-wheel off-road suspension, and heavy knobby tread tires for rough terrain.',
       tag: 'Quad ATV Series',
       stat: '125cc–200cc Engine',
-      image: atv_quad_vehicle_1790339374646
+      image: '/src/assets/images/atv_quad_vehicle_1790339374646.jpg'
     }
   ];
 

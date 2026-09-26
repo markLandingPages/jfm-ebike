@@ -7,7 +7,6 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 import GsapScrollAnimator from './components/GsapScrollAnimator';
 import HeroSection from './components/HeroSection';
-import BranchTicker from './components/BranchTicker';
 import ProblemSection from './components/ProblemSection';
 import ProductInActionSection from './components/ProductInActionSection';
 import InventoryGallery from './components/InventoryGallery';
@@ -39,7 +38,6 @@ export default function App() {
       <main className="flex-1">
         {/* 1. Hero Section */}
         <HeroSection onExploreClick={scrollToInventory} />
-        <BranchTicker />
 
         {/* 2. Problem / Relatability Section */}
         <ProblemSection />

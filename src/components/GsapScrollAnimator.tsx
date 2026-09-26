@@ -1,28 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function GsapScrollAnimator() {
-  const progressBarRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    // 1. Scroll Progress Bar at the very top of the window
-    if (progressBarRef.current) {
-      gsap.to(progressBarRef.current, {
-        scaleX: 1,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: document.documentElement,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 0.3
-        }
-      });
-    }
-
-    // 2. Animate all elements with data-gsap attributes safely
+    // Animate all elements with data-gsap attributes safely
     const ctx = gsap.context(() => {
       // Fade-up headers and text blocks
       const fadeUpElements = gsap.utils.toArray<HTMLElement>('[data-gsap="fade-up"]');
@@ -103,10 +87,5 @@ export default function GsapScrollAnimator() {
     };
   }, []);
 
-  return (
-    <div
-      ref={progressBarRef}
-      className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#800020] via-rose-500 to-[#800020] z-[60] origin-left scale-x-0 pointer-events-none shadow-xs"
-    />
-  );
+  return null;
 }

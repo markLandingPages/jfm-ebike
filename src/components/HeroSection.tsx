@@ -1,8 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Star, Phone, ArrowUpRight } from 'lucide-react';
 import { gsap } from 'gsap';
-import hero_video_1790341591947 from '../assets/hero-video.mp4';
-import jfm_hero_lifestyle_1790341591947 from '../assets/images/jfm_hero_lifestyle_1790341591947.jpg';
 
 interface HeroSectionProps {
   onExploreClick: () => void;
@@ -58,16 +56,13 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
           playsInline
           controls={false}
           className="w-full h-full object-cover object-center scale-100 opacity-90 transition-opacity duration-700"
-          poster={jfm_hero_lifestyle_1790341591947}
+          poster="/src/assets/images/jfm_hero_lifestyle_1790341591947.jpg"
         >
-          <source src={hero_video_1790341591947} type="video/mp4" />
+          <source src="/src/assets/hero-video.mp4" type="video/mp4" />
         </video>
 
         {/* Soft Contrast Veil for clear text legibility */}
         <div className="absolute inset-0 bg-white/45 backdrop-blur-[0.5px]" />
-
-        {/* Top Header Fade */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white/80 via-white/40 to-transparent" />
 
         {/* Smooth Bottom Fade Effect transitioning seamlessly into the next section */}
         <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-44 bg-gradient-to-t from-white via-white/80 to-transparent" />
