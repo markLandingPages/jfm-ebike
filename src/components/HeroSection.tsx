@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { Star, Phone, ArrowUpRight } from 'lucide-react';
+import { Star, Phone, ArrowUpRight, FileText, Sparkles, Building2 } from 'lucide-react';
 import { gsap } from 'gsap';
-import jfm_hero_lifestyle_ebike_1790339387002 from '../assets/images/jfm_hero_lifestyle_1790341591947.jpg';
-import hero_video from '../assets/hero-video.mp4';
+
 interface HeroSectionProps {
   onExploreClick: () => void;
 }
@@ -47,7 +46,7 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[92vh] sm:min-h-screen flex items-center justify-center pt-20 sm:pt-24 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-zinc-950">
+    <section id="hero" className="relative min-h-[92vh] sm:min-h-screen flex items-center justify-center pt-24 sm:pt-28 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-zinc-950">
       {/* Background Video - High Visibility, Looping, Muted, No Controls */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
@@ -57,9 +56,9 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
           playsInline
           controls={false}
           className="w-full h-full object-cover object-center scale-100 opacity-90 transition-opacity duration-700"
-          poster={jfm_hero_lifestyle_ebike_1790339387002}
+          poster="/src/assets/images/jfm_hero_lifestyle_1790341591947.jpg"
         >
-          <source src={hero_video} type="video/mp4" />
+          <source src="/src/assets/hero-video.mp4" type="video/mp4" />
         </video>
 
         {/* Soft Contrast Veil for clear text legibility */}
@@ -71,7 +70,7 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
 
       {/* Main Centered Content */}
       <div ref={heroRef} className="relative z-10 max-w-4xl mx-auto w-full text-center flex flex-col items-center space-y-6 sm:space-y-7">
-        {/* Top Badges Group */}
+       {/* Top Badges Group */}
         <div ref={badgesRef} className="flex flex-col items-center space-y-2 sm:space-y-2.5">
           {/* Top Review Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-zinc-200/90 text-xs text-[#800020] shadow-sm">
@@ -99,40 +98,49 @@ export default function HeroSection({ onExploreClick }: HeroSectionProps) {
         </div>
 
         {/* Big Headline */}
-        <div className="space-y-1 max-w-3xl">
+        <div className="space-y-2 max-w-3xl">
           <h1 ref={headlineRef} className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-950 tracking-tight leading-[1.08] drop-shadow-sm">
-            Ilocos premier e-mobility, <br />
-            <span className="font-semibold text-[#800020] drop-shadow-sm">
-              engineered for real roads.
+            Ilocos premier e-mobility, ATVs, <br />
+            <span className="font-bold text-[#800020] drop-shadow-sm">
+              & trusted multi-service solutions.
             </span>
           </h1>
         </div>
 
         {/* Supporting Copy */}
         <p ref={copyRef} className="text-zinc-800 text-base sm:text-lg leading-relaxed max-w-2xl font-medium mx-auto drop-shadow-xs">
-          High-efficiency commuter electric bikes, passenger e-trikes, and heavy-duty quad ATVs for Ilocos Sur & Norte. Direct showroom stock with official warranty, battery service & genuine parts.
+          Explore complete showroom stock with cash promos & Home Credit installments across 10 Ilocos branches — plus authorized government booking (PRC, DFA, PSA, LTO) and regional enterprise services.
         </p>
 
         {/* CTA Button Group */}
-        <div ref={ctasRef} className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-2">
+        <div ref={ctasRef} className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2">
+          {/* Main Maroon Action: Inventory */}
           <button
             onClick={onExploreClick}
-            className="group flex items-center gap-2.5 px-7 py-4 rounded-full bg-[#800020] hover:bg-[#6b001b] text-white text-sm sm:text-base font-bold tracking-tight transition-all shadow-[0_8px_25px_rgba(128,0,32,0.4)] hover:shadow-[0_12px_32px_rgba(128,0,32,0.55)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            className="group flex items-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-[#800020] hover:bg-[#6b001b] text-white text-xs sm:text-sm font-bold tracking-tight transition-all shadow-[0_8px_25px_rgba(128,0,32,0.4)] hover:shadow-[0_12px_32px_rgba(128,0,32,0.55)] hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
           >
-            <span>Explore Inventory</span>
-            <div className="w-6 h-6 rounded-full bg-white text-[#800020] flex items-center justify-center transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shadow-sm">
-              <ArrowUpRight className="w-4 h-4" />
+            <span>Explore E-Bikes & ATVs</span>
+            <div className="w-5 h-5 rounded-full bg-white text-[#800020] flex items-center justify-center transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shadow-xs">
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </div>
           </button>
 
+          {/* Secondary Action: Government Booking Services */}
           <a
-            href="tel:09366082578"
-            className="flex items-center gap-2 px-5 py-3.5 rounded-full bg-white/90 hover:bg-white backdrop-blur-md border border-zinc-200/90 text-sm sm:text-base text-zinc-800 hover:text-[#800020] font-medium transition-all shadow-md"
+            href="#booking-services"
+            className="flex items-center gap-2 px-5 py-3.5 rounded-full bg-white hover:bg-zinc-50 border border-zinc-300 text-xs sm:text-sm text-zinc-900 font-bold transition-all shadow-xs hover:border-[#800020]"
           >
-            <div className="w-8 h-8 rounded-full bg-[#fbf0f2] border border-[#800020]/20 flex items-center justify-center text-[#800020] shadow-xs">
-              <Phone className="w-3.5 h-3.5 fill-current" />
-            </div>
-            <span>Call Directly: <strong className="text-zinc-950 font-mono font-bold">(0936) 608-2578</strong></span>
+            <FileText className="w-4 h-4 text-[#800020]" />
+            <span>Booking & Gov't Docs</span>
+          </a>
+
+          {/* Third Action: 5 Other Businesses */}
+          <a
+            href="#other-businesses"
+            className="flex items-center gap-2 px-5 py-3.5 rounded-full bg-zinc-900 hover:bg-black text-white text-xs sm:text-sm font-bold transition-all shadow-xs"
+          >
+            <Building2 className="w-4 h-4 text-rose-300" />
+            <span>5 Other Divisions</span>
           </a>
         </div>
       </div>

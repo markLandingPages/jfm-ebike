@@ -1,9 +1,18 @@
-import { Star, CheckCircle2, Quote, MapPin, Building2, ShieldCheck, ThumbsUp, Sparkles, Store, Award, BadgeCheck } from 'lucide-react';
-import { REVIEWS_DATA } from '../data/ebikesData';
+import { Star, CheckCircle2, Quote, MapPin, BadgeCheck, Store } from 'lucide-react';
+import { useCms } from '../context/CmsContext';
 
 export default function SocialProofSection() {
-  const featuredReview = REVIEWS_DATA[0];
-  const otherReviews = REVIEWS_DATA.slice(1);
+  const { reviews, branches, config } = useCms();
+  const featuredReview = reviews[0] || {
+    id: 'rev-default',
+    name: 'Engr. Mark Jerome Bautista',
+    location: 'San Juan, Ilocos Sur (Main Branch)',
+    unitPurchased: 'JFM CargoMax 800W Trike',
+    rating: 5,
+    date: 'August 2026',
+    comment: 'Sobrang tipid sa pamalengke at panghatid sa mga bata sa Bannuar Elementary! Hindi na kami gumagastos sa krudo. 1 charge lang tumatagal ng 3-4 days sa amin.'
+  };
+  const otherReviews = reviews.slice(1);
 
   return (
     <section id="reviews" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
@@ -36,7 +45,7 @@ export default function SocialProofSection() {
           <div className="relative z-10 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4">
               <div className="flex items-center gap-1 text-amber-400">
-                {[...Array(featuredReview.rating)].map((_, i) => (
+                {[...Array(featuredReview.rating || 5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-amber-400" />
                 ))}
                 <span className="ml-2 text-xs font-bold text-white">5.0 / 5.0 Rating</span>
@@ -94,7 +103,7 @@ export default function SocialProofSection() {
             </div>
 
             <div className="p-3.5 rounded-2xl bg-white border border-[#800020]/15 space-y-1 shadow-2xs">
-              <span className="text-2xl font-black text-[#800020] block">10 Hubs</span>
+              <span className="text-2xl font-black text-[#800020] block">{branches.length} Hubs</span>
               <span className="text-xs font-bold text-zinc-800 block">Display Centers</span>
               <span className="text-[10px] text-zinc-500">Walk-In Access</span>
             </div>
@@ -125,7 +134,7 @@ export default function SocialProofSection() {
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-0.5">
-                  {[...Array(rev.rating)].map((_, i) => (
+                  {[...Array(rev.rating || 5)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
@@ -158,7 +167,7 @@ export default function SocialProofSection() {
         <div className="flex items-center gap-2">
           <Store className="w-4 h-4 text-[#800020] shrink-0" />
           <span>
-            Have questions about any unit? Visit your closest showroom or call our central team at <strong className="text-zinc-950 font-mono">09366082578</strong>.
+            Have questions about any unit? Visit your closest showroom or call our central team at <strong className="text-zinc-950 font-mono">{config.hotline}</strong>.
           </span>
         </div>
         <a

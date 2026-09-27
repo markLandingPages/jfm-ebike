@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Play, Youtube, ExternalLink, Sparkles } from 'lucide-react';
-import hero_ebike_commuter_bike_1790339345034 from '../assets/images/hero_ebike_fleet_1790339326610.jpg';
-import jfm_hero_lifestyle_ebike_1790339387002 from '../assets/images/jfm_hero_lifestyle_1790341591947.jpg';
-import jfm_showroom_hero_1790339399358 from '../assets/images/jfm_showroom_hub_1790339391145.jpg';
+import imgSuperRaptor126 from '../assets/images/super-raptor-126.png';
+import imgSuperjElux from '../assets/images/superj-elux.png';
+import imgShark200 from '../assets/images/shark-200.png';
+
 interface ProductInActionProps {
   onExploreClick: () => void;
 }
@@ -16,21 +17,21 @@ export default function ProductInActionSection({ onExploreClick }: ProductInActi
       description: 'Effortless step-through geometry, generous front storage basket, and 45–60 km range on a single charge.',
       tag: 'City Commuter Series',
       stat: '500W–600W Hub Motor',
-      image: hero_ebike_commuter_bike_1790339345034
+      image: imgSuperRaptor126
     },
     {
       title: 'All-Weather Family Transit',
       description: 'Full canopy overhead weather roof, comfortable bench seating for 3 passengers, and digital reverse gear.',
       tag: 'Heavy-Duty E-Trike',
       stat: '320kg Max Load',
-      image: jfm_showroom_hero_1790339399358
+      image: imgSuperjElux
     },
     {
       title: 'Off-Road & Farm Cargo Power',
       description: 'Reinforced utility cargo racks, 4-wheel off-road suspension, and heavy knobby tread tires for rough terrain.',
       tag: 'Quad ATV Series',
       stat: '125cc–200cc Engine',
-      image: jfm_hero_lifestyle_ebike_1790339387002
+      image: imgShark200
     }
   ];
 

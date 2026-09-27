@@ -1,7 +1,10 @@
-import { ShieldCheck, MapPin, ExternalLink, Youtube, CheckCircle2 } from 'lucide-react';
-import { BRANCHES_DATA } from '../data/ebikesData';
+import { ShieldCheck, MapPin, ExternalLink, Youtube, CheckCircle2, FileText, Building2 } from 'lucide-react';
+import { useCms } from '../context/CmsContext';
+import { BOOKING_CONTACT_INFO } from '../data/ebikesData';
 
 export default function GuaranteeFooterSection() {
+  const { branches, config } = useCms();
+
   const guaranteePoints = [
     {
       title: '1-Year Motor & Electrical Warranty',
@@ -16,8 +19,8 @@ export default function GuaranteeFooterSection() {
       desc: 'Complimentary mechanical tuning, brake calibration, and battery diagnostics after your initial break-in period.'
     },
     {
-      title: '10-Branch Walk-In Network',
-      desc: 'Honor your warranty and receive service assistance at any of our 10 locations across Ilocos Sur & Norte.'
+      title: `${branches.length}-Branch Walk-In Network`,
+      desc: `Honor your warranty and receive service assistance at any of our ${branches.length} locations across Ilocos Sur & Norte.`
     }
   ];
 
@@ -43,7 +46,7 @@ export default function GuaranteeFooterSection() {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-rose-100 leading-relaxed">
-                When you buy from JFM E-Bikes, you are backed by a registered Philippine company with physical showrooms, real technicians, and dedicated customer service.
+                When you buy from JFM E-Bikes or transact with JFM Group of Businesses, you are backed by registered physical offices, real technicians, and dedicated regional management.
               </p>
             </div>
 
@@ -73,15 +76,15 @@ export default function GuaranteeFooterSection() {
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-2">
               <span className="text-xl font-extrabold text-white">
-                JFM <span className="text-[#a01c3b]">E-BIKES</span>
+                JFM <span className="text-[#a01c3b]">GROUP OF BUSINESSES</span>
               </span>
             </div>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-              JFM E-Bikes Trading & Services is the premier e-mobility dealership in Ilocos, operating 10 physical display centers alongside regional security, ticketing, and document services.
+              JFM Group is an integrated enterprise based in Ilocos, operating 10 physical e-mobility showrooms alongside authorized government booking, document liaison, digital marketing, bookkeeping, and security surveillance divisions.
             </p>
-            <div className="pt-2 flex items-center gap-3">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
-                href="https://www.facebook.com/JFMeBikeShopMaintenanceandRepair"
+                href={config.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs text-zinc-300 hover:text-white flex items-center gap-1.5 transition-colors"
@@ -90,13 +93,13 @@ export default function GuaranteeFooterSection() {
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
               <a
-                href="https://www.youtube.com/@JohnFrancisManuelRNRMLPT"
+                href={config.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs text-zinc-300 hover:text-white flex items-center gap-1.5 transition-colors"
               >
                 <Youtube className="w-3.5 h-3.5 text-red-500" />
-                <span>YouTube Channel</span>
+                <span>YouTube</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -105,33 +108,31 @@ export default function GuaranteeFooterSection() {
           {/* Quick Links */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">
-              Navigation
+              Business Divisions
             </h4>
             <ul className="space-y-2 text-xs text-zinc-400">
-              <li><a href="#hero" className="hover:text-rose-400 transition-colors">Home</a></li>
-              <li><a href="#problem" className="hover:text-rose-400 transition-colors">Why Switch</a></li>
-              <li><a href="#showcase" className="hover:text-rose-400 transition-colors">In Action</a></li>
-              <li><a href="#features" className="hover:text-rose-400 transition-colors">Features & Tech</a></li>
-              <li><a href="#inventory" className="hover:text-rose-400 transition-colors">Live Inventory</a></li>
-              <li><a href="#reviews" className="hover:text-rose-400 transition-colors">Social Proof</a></li>
-              <li><a href="#comparison" className="hover:text-rose-400 transition-colors">Comparison & Value</a></li>
-              <li><a href="#reserve" className="hover:text-rose-400 transition-colors">Reserve a Unit</a></li>
-              <li><a href="#faq" className="hover:text-rose-400 transition-colors">FAQs</a></li>
+              <li><a href="#inventory" className="hover:text-rose-400 transition-colors">JFM E-Bikes & E-Trikes</a></li>
+              <li><a href="#booking-services" className="hover:text-rose-400 transition-colors">JFM Booking & Gov't Docs</a></li>
+              <li><a href="#other-businesses" className="hover:text-rose-400 transition-colors">JFM Online Booking (Flights/Sea)</a></li>
+              <li><a href="#other-businesses" className="hover:text-rose-400 transition-colors">JFM Document Processing</a></li>
+              <li><a href="#other-businesses" className="hover:text-rose-400 transition-colors">JFM Digital Marketing</a></li>
+              <li><a href="#other-businesses" className="hover:text-rose-400 transition-colors">JFM Bookkeeping & BIR Tax</a></li>
+              <li><a href="#other-businesses" className="hover:text-rose-400 transition-colors">JFM CCTV & Security</a></li>
             </ul>
           </div>
 
-          {/* 10 Branch Quick Directory */}
+          {/* Display Centers Directory */}
           <div className="lg:col-span-5 space-y-3">
             <div className="flex items-center justify-between">
               <h4 className="text-xs font-bold uppercase tracking-wider text-white">
-                10 Ilocos Display Centers
+                {branches.length} Ilocos Display Centers
               </h4>
               <span className="text-[10px] font-mono text-rose-400 font-semibold">Open Mon–Sat</span>
             </div>
 
             <div className="grid grid-cols-2 gap-2 text-xs text-zinc-400">
-              {BRANCHES_DATA.map((b) => (
-                <div key={b.name} className="flex items-center gap-1.5 truncate">
+              {branches.map((b) => (
+                <div key={b.name + b.municipality} className="flex items-center gap-1.5 truncate">
                   <MapPin className="w-3 h-3 text-[#a01c3b] shrink-0" />
                   <span className="truncate">{b.municipality} ({b.province})</span>
                 </div>
@@ -139,18 +140,24 @@ export default function GuaranteeFooterSection() {
             </div>
 
             <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between">
-              <span className="text-xs text-zinc-400">Central Hotline:</span>
-              <a href="tel:09366082578" className="text-sm font-bold text-white hover:text-rose-400 font-mono transition-colors">
-                09366082578
-              </a>
+              <span className="text-xs text-zinc-400">Central Hotlines:</span>
+              <div className="flex items-center gap-2 font-mono text-xs font-bold text-white">
+                <a href={`tel:${config.hotline}`} className="hover:text-rose-400 transition-colors">
+                  {config.hotline}
+                </a>
+                <span>·</span>
+                <a href={`tel:${BOOKING_CONTACT_INFO.contactNumbers[0]}`} className="hover:text-rose-400 transition-colors">
+                  {BOOKING_CONTACT_INFO.contactNumbers[0]}
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Copyright */}
         <div className="pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
-          <p>© {new Date().getFullYear()} JFM Group of Businesses · JFM E-Bikes Trading & Services. All rights reserved.</p>
-          <p>Main Office: Brgy. Bannuar, San Juan, Ilocos Sur, Philippines.</p>
+          <p>© {new Date().getFullYear()} JFM Group of Businesses · John Francis L. Manuel. All rights reserved.</p>
+          <span>Main HQ: {BOOKING_CONTACT_INFO.address}</span>
         </div>
       </div>
     </footer>
